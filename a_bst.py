@@ -24,12 +24,12 @@ class Tree:
 
 # NOT given to students
 def initialize() -> Tree:
-    return None # TODO
+    return Tree(None) # TODO
 
 
 # NOT given to students
 def isEmpty(tree: Tree) -> bool:
-    return None # TODO
+    return tree.root is None # TODO
 
 
 # given to the students
@@ -56,7 +56,11 @@ def preorder_traversal(tree: Node, level:int=0):
 def inorder_traversal(tree: Node, level:int=0):
     if level == 0:
         print('in order traversal')
-    if False: # TODO
+    if tree != None:# TODO
+        print(f' level ={level:3^d}: value = {tree.value}')
+        inorder_traversal(tree.left, level + 1)
+        inorder_traversal(tree.right, level + 1)
+
         # TODO
         return
 
@@ -65,7 +69,10 @@ def inorder_traversal(tree: Node, level:int=0):
 def postorder_traversal(tree: Node, level:int=0):
     if level == 0:
         print('post order traversal')
-    if False: # TODO
+    if tree != None: # TODO
+        print(f' level = {level:^3d} : value = {tree.value}')
+        postorder_traversal(tree.left, level + 1)
+        postorder_traversal(tree.right, level +1)
         # TODO
         return
 
@@ -73,30 +80,28 @@ def postorder_traversal(tree: Node, level:int=0):
 # NOT given to the students
 def search(root: Node, value: int) -> Node:
     # base cases
-    if False: # TODO
-        return None # TODO
-    elif False: # TODO
-        return None # TODO
+    if root == None: # TODO
+        return root # TODO
+    elif root.value == value: # TODO
+        return root # TODO
     # recursive step
     else:
-        if False: # TODO
-            return None # TODO
+        if value < root.value: # TODO
+            return search(root.left, value) # TODO
         else:
-            return None # TODO
+            return search(root.right, value) # TODO
 
 
 # NOT given to students
 def insert(root: Node, value: int) -> Node:
-    if False: # TODO
-        return None # TODO
+    if root == None: # TODO
+        return Node(value) # TODO
     else:
-        if False: # TODO
-            return None # TODO
-        elif False: # TODO
-            root.right = None # TODO
+        if value < root.value: # TODO
+            root.right = insert(root.left, value) # TODO
         else:
-            root.left = None # TODO
-    return root
+            root.left = insert(root.right, value) # TODO
+        return root
 
 
 # given to students

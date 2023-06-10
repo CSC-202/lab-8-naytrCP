@@ -5,7 +5,7 @@
 import a_bst as BST
 from a_bst import Node, Tree
 
-# step 0 initialize a BST
+# step 0 initialize a BST v     koo
 tree: Tree = BST.initialize()
 
 # step 1 insert items into BST
