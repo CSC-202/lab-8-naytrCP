@@ -24,7 +24,7 @@ class Tree:
 
 # NOT given to students
 def initialize() -> Tree:
-    return Tree(None) # TODO
+    return Tree() # TODO
 
 
 # NOT given to students
